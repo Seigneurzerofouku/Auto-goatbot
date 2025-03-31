@@ -16,11 +16,7 @@ const rolePlay = "quand tu réponds à cette question ajoutes des emojis convena
 const Prefixes = [
   'ia',
   'ai',
-  'kelem',
-   'Aziz' ,
-  'damiba' ,
-  'provincial' ,
-  'LPB' ,
+  'temari',
   'ae',
 ];
 
@@ -46,9 +42,9 @@ module.exports = {
       const prompt = event.body.substring(prefix.length).trim();
       if (!prompt) {
       const prompt = event.body.substring(prefix.length).trim();
-api.setMessageReaction("🧋", event.messageID, () => {}, true);
+api.setMessageReaction("💬", event.messageID, () => {}, true);
       if (!prompt) {
-        await message.reply("𝐂𝐇𝐀𝐓𝐆𝐏𝐓\n▬▬▬▬▬▬▬▬▬▬▬▬▬\n𝙔𝙤 𝙢𝙚𝙘 𝙦𝙪𝙚 𝙥𝙪𝙞-𝙟𝙚 𝙛𝙖𝙞𝙧𝙚 𝙥𝙤𝙪𝙧 𝙩𝙤𝙞 ?\n▬▬▬▬▬▬▬▬▬▬▬▬▬");
+        await message.reply("𝐣𝐞  𝐬𝐮𝐢𝐬 𝐝𝐚𝐦𝐢𝐛𝐚 𝐝𝐮 𝐩𝐫𝐨𝐯𝐢𝐧𝐜𝐢𝐚𝐥 𝐩𝐨𝐬𝐞 𝐭𝐚 𝐪𝐮𝐞𝐬𝐭𝐢𝐨𝐧");
         return;
       }
         return;
@@ -56,8 +52,8 @@ api.setMessageReaction("🧋", event.messageID, () => {}, true);
       const senderID = event.senderID;
       const senderInfo = await api.getUserInfo([senderID]);
       const senderName = senderInfo[senderID].name;
-      const response = await axios.get(`https://over-ai-yau-5001-center-hassan.vercel.app/ai?prompt=${encodeURIComponent(rolePlay + prompt)}`);
-      const answer = `𝐂𝐇𝐀𝐓𝐆𝐏𝐓\n▬▬▬▬▬▬▬▬▬▬▬▬▬\n${response.data.answer} \n▬▬▬▬▬▬▬▬▬▬▬▬▬`;
+      const response = await axios.get(`https://sandipbaruwal.onrender.com/gemini?prompt=${encodeURIComponent(rolePlay + prompt)}`);
+      const answer = `💬 L̑̈P̑̈B̑̈\n▬▬▬▬▬▬▬▬▬▬▬▬▬\n${response.data.answer} \n▬▬▬▬▬▬▬▬▬▬▬▬▬`;
 api.setMessageReaction("✅", event.messageID, () => {}, true);
 
       //apply const font to each letter in the answer
